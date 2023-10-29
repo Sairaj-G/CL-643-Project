@@ -11,7 +11,7 @@ all_players_stats = []
 row_names = ["Name", "Country", "Batting Average", "Batting Strike Rate", "Hundreds", "Fifties", "Bowling Economy", "Wickets Taken"]
 
 
-for i in range(0,149):
+for i in range(0,60):
     player_batting = player_bat_stats.batting_stats(first_names[i])
     player_bowling = player_ball_stats.bowling_stats(first_names[i])
 
