@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import re
 
-teams = ["/14/india", "/16/new-zealand", "/19/south-africa", "/15/australia", "/20/pakistan", "/17/afghanistan", "/22/bangladesh", "/68/netherlands", "/13/sri-lanka", "/11/england"]
+teams = ["/14/india", "/16/new-zealand", "/19/south-africa", "/15/australia"]
 
 
 
@@ -12,7 +12,7 @@ all_players = []
 first_names = []
 
 
-for i in range(0,10):
+for i in range(0,4):
     source_team = source_url + teams[i]
 
     print(source_team)
