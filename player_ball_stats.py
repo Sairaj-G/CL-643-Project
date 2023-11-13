@@ -24,14 +24,13 @@ def bowling_stats(player_name):
 
 
     bowstat = bowling.find_all("td", class_="text-right")
-
-
     odiwickets = bowstat[16].text
 
     odiecon = bowstat[19].text
+    bowavg = bowstat[20].text
+    bowsr = bowstat[21].text
 
-
-    ball_stats = data_models.BowlingStats(wickets = odiwickets, economy = odiecon)
+    ball_stats = data_models.BowlingStats(wickets = odiwickets, economy = odiecon,average= bowavg, strike_rate= bowsr)
 
     return ball_stats
 

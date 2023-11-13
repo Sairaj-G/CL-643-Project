@@ -33,7 +33,7 @@ def batting_stats (player_name):
 
     batstat = batting.find_all("td",class_="text-right")
 
-
+    odi_innings = batstat[14].text
     odiavg = batstat[18].text
     odisr = batstat[20].text
     odi100 = batstat[21].text
@@ -43,7 +43,7 @@ def batting_stats (player_name):
 
 
 
-    bat_stats = data_models.BattingStats(country= country,average=odiavg, strike_rate = odisr, hundred = odi100, fifty = odi50)
+    bat_stats = data_models.BattingStats(country= country,average=odiavg, strike_rate = odisr, hundred = odi100, fifty = odi50, innings=odi_innings)
 
     return bat_stats
 
