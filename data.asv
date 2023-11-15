@@ -1,6 +1,6 @@
 
 
-function [playerName, isInternational, bowling, batting, battingPrice, bowlingPrice, isWK, budget] = data
+function [playerName, isInternational, bowling, batting, battingPrice, bowlingPrice, isWK, budgert] = data
 
 all_data = readtable("team_optimizer_data.csv");
 
