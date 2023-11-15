@@ -1,4 +1,4 @@
-function [bestsol,bestfitness,BestFitIter,P,f] = TLBO(prob,lb,ub,Np,T)
+function [bestsol,bestfitness,BestFitIter,P] = tlbo(prob,lb,ub,Np,T)
 
 %% Starting of TLBO
 f = NaN(Np,1);                      % Vector to store the fitness function value of the population members

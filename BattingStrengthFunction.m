@@ -12,6 +12,7 @@ cost = 0;
 netBatting = 0;
 
 
+
 for i = 1 : 60
     if(x(i) == 1)
         totalPlayers = totalPlayers + 1;
@@ -60,7 +61,7 @@ if(international > 4)
     totalInternationalPenalty = 10^5;
 end
 
-f = batting - 10^15*(totalPlayerPenalty + totalBowlerPenalty + totalBatsmenPenalty + budgetPenalty + totalInternationalPenalty);
+f = -netBatting + 10^15*(totalPlayerPenalty + totalBowlerPenalty + totalBatsmenPenalty + budgetPenalty + totalInternationalPenalty);
 
 
 
