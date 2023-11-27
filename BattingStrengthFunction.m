@@ -1,7 +1,7 @@
 
 function f = BattingStrengthFunction(x)
 
-[playerName, isInternational, bowling, batting, battingPrice, bowlingPrice, isWK, budget] = data
+[~, isInternational, bowling, batting, battingPrice, bowlingPrice, isWK, budget] = data;
 
 batsmen = 0;
 bowlers = 0;
