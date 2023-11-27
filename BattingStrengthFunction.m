@@ -1,23 +1,25 @@
 
-function f = BattingStrengthFunction(x)
+function [f, selectedPlayers] = BattingStrengthFunction(x)
 
-[playerName, isInternational, bowling, batting, battingPrice, bowlingPrice, isWK, budget] = data
+[playerName, isInternational, bowling, batting, battingPrice, bowlingPrice, isWK, budget] = data;
 
 batsmen = 0;
 bowlers = 0;
-WCs = 0;
+WKs = 0;
 international = 0;
 totalPlayers = 0;
 cost = 0;
 netBatting = 0;
 
-
+selectedPlayers = cell(60, size(playerName, 2));
 
 for i = 1 : 60
     if(x(i) == 1)
         totalPlayers = totalPlayers + 1;
-        if(isWK(i) == "YES")
-            WCs = WCs + 1;
+        selectedPlayers{totalPlayers, :} = playerName(i, :);
+
+        if(strcmp(isWK(i,:),"YES"))
+            WKs = WKs + 1;
             cost = cost + battingPrice;
         elseif(batting(i) > bowling(i))
             netBatting = netBatting + batting(i);
@@ -37,7 +39,7 @@ end
 totalPlayerPenalty = 0;
 totalBatsmenPenalty = 0;
 totalBowlerPenalty = 0;
-totalWCPenalty = 0;
+totalWKPenalty = 0;
 budgetPenalty = 0;
 totalInternationalPenalty = 0;
 
@@ -53,17 +55,18 @@ if(batsmen ~= 7)
     totalBatsmenPenalty = 10^5;
 end
 
+if(WKs ~= 2)
+    totalWKPenalty = 10^5;
+end
+
 if(cost > budget)
     budgetPenalty = 10^5;
 end
 
-if(international > 4)
+if(international > 4 || international < 2)
     totalInternationalPenalty = 10^5;
 end
 
-f = -netBatting + 10^15*(totalPlayerPenalty + totalBowlerPenalty + totalBatsmenPenalty + budgetPenalty + totalInternationalPenalty);
+selectedPlayers = selectedPlayers(1:totalPlayers, :);
 
-
-
-
-
+f = -netBatting + 10^15*(totalPlayerPenalty + totalBowlerPenalty + totalBatsmenPenalty + totalWKPenalty + budgetPenalty + totalInternationalPenalty);
