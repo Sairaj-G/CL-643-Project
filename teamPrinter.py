@@ -1,5 +1,4 @@
 import pandas as pd
-import subprocess
 
 df = pd.read_csv("team_optimizer_data.csv", index_col='Index')
 
