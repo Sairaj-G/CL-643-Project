@@ -1,0 +1,31 @@
+B 3 C o m p i l a t i o n
+B 425 Equation Listing    SOLVE cric Using MIP From line 411
+D 428 budget
+D 433 batting
+D 438 bowling
+D 443 players
+D 448 totWK
+D 453 totBatsmen
+D 458 totBowlers
+D 463 battingThreshold
+B 469 Column Listing      SOLVE cric Using MIP From line 411
+E 472 x
+E 501 batNet
+E 509 bowlNet
+B 517 Range Statistics    SOLVE cric Using MIP From line 411
+B 528 Model Statistics    SOLVE cric Using MIP From line 411
+B 541 Solution Report     SOLVE cric Using MIP From line 411
+F 586 budget
+F 587 batting
+F 588 bowling
+F 589 players
+F 590 totWK
+F 591 totBatsmen
+F 592 totBowlers
+F 593 battingThreshold
+G 595 x
+G 662 batNet
+G 663 bowlNet
+B 671 E x e c u t i o n
+I 671 x
+I 678 bowlNet
