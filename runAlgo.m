@@ -1,4 +1,5 @@
-Nruns = 5;
+clear;clc;
+Nruns = 1;
 T = 100;
 Np = 50;
 
@@ -11,4 +12,3 @@ for i = 1 : Nruns
 end
 
 display(bestsol);
-
